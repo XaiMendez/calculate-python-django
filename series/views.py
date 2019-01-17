@@ -3,7 +3,7 @@ from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from .Params import Params
+#from .Params import Params
 
 # Create your views here.
 
@@ -14,12 +14,16 @@ def index(request):
 			body_unicode = request.body.decode('utf-8')
 			data = json.loads(body_unicode)
 			
+			data_attribute = data["attribute"]
 			data_params = data["params"]
+			data_function = data["function"]
+
 			params = {}
 			for param in data_params:
 				params[param["name"]] = param["value"]
 			
 			#print(params["CODI_ESTA"])
+			print(eval(data_function))
 			return HttpResponse("POST, world. You're at the polls index.")
 	elif request.method == 'GET':
     	    return HttpResponse("GET, world. You're at the polls index.")
