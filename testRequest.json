@@ -1,0 +1,8 @@
+{
+	"attribute":"name",
+	"params":[
+		{"name":"CODI_ESTA","value":6},
+		{"name":"x","value":1}
+	],
+	"function":"params['CODI_ESTA'] + 1"
+}
