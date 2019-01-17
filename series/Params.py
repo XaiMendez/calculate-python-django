@@ -1,3 +1,0 @@
-class Params:
-	name = ""
-	value = ""
